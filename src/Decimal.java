@@ -26,10 +26,28 @@ public class Decimal extends Calculator{
 
     @Override
     String substract() {
-        
+        int digit3_n1 = Integer.parseInt(String.valueOf( number1.charAt(2)));
+        int digit3_n2 = Integer.parseInt(String.valueOf( number2.charAt(2)));
+        int digit2_n1 = Integer.parseInt(String.valueOf( number1.charAt(1)));
+        int digit2_n2 = Integer.parseInt(String.valueOf( number2.charAt(1)));
+        int digit1_n1 = Integer.parseInt(String.valueOf( number1.charAt(0)));
+        int digit1_n2 = Integer.parseInt(String.valueOf( number2.charAt(0)));
 
+        if(digit3_n2 > digit3_n1){
+            digit3_n1 = digit3_n1 + 10;
+            digit2_n1 = digit2_n1 - 1;
+        }
+        int result3 = digit3_n1 - digit3_n2;
 
+        if(digit2_n2 > digit2_n1){
+            digit2_n1 = digit2_n1 + 10;
+            digit1_n1 = digit1_n1 - 1;
+        }
+        int result2 = digit2_n1 - digit2_n2;
 
-        return null;
+        int result1 = digit1_n1 - digit1_n2;
+
+        return String.valueOf(result1)+String.valueOf(result2) + String.valueOf(result3);
+        }
     }
-}
+
